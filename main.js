@@ -7,7 +7,7 @@ async function generateToken() {
     const payload = core.getInput('payload');
     const expiry = core.getInput('expiry');
 
-    const token = jwt.sign(payload, secret, { expiresIn: expiry });
+    const token = jwt.sign(JSON.parse(payload), secret, { expiresIn: expiry });
 
     core.setOutput('access_token', token);
   } catch (error) {

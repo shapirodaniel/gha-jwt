@@ -3,17 +3,17 @@ description: 'generate signed json web tokens with expiry and not-before header 
 author: 'daniel shapiro <shapirodanieladam@gmail.com>'
 inputs:
   secret:
-    description: 'used by jsonwebtoken to sign a payload'
+    description: 'used by jsonwebtoken to sign a payload (string)'
     required: true
   payload:
-    description: 'the jwt payload'
+    description: 'the jwt payload (string)'
     required: true
   expiry:
-    description: 'an expiry window, conforming to jsonwebtoken config object, eg. { expiry: "1w" }'
+    description: 'an expiry window (string), conforming to jsonwebtoken config object expiry field, eg. { expiry: "1w" }'
     required: true
 outputs:
   access_token:
-    description: 'signed jwt with expiry and nbf headers'
+    description: 'signed jwt with expiry'
 runs:
   using: 'node16'
   main: 'dist/index.js'

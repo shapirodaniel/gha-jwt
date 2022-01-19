@@ -5252,7 +5252,7 @@ async function generateToken() {
     const payload = _actions_core__WEBPACK_IMPORTED_MODULE_0__/* .getInput */ .Np('payload');
     const expiry = _actions_core__WEBPACK_IMPORTED_MODULE_0__/* .getInput */ .Np('expiry');
 
-    const token = jsonwebtoken__WEBPACK_IMPORTED_MODULE_1__.sign(payload, secret, { expiresIn: expiry });
+    const token = jsonwebtoken__WEBPACK_IMPORTED_MODULE_1__.sign(JSON.parse(payload), secret, { expiresIn: expiry });
 
     _actions_core__WEBPACK_IMPORTED_MODULE_0__/* .setOutput */ .Xg('access_token', token);
   } catch (error) {
